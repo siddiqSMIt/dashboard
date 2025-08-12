@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+    .product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <nav class="navbar navbar-light bg-white shadow p-3">
+    <div class="container-fluid" >
+      <button class="btn btn-outline-danger" id="logout">Logout</button>
+      <h4 class="m-0 mx-auto">Dashboard</h4>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
+    </div>
+  </nav>
+
+
+  <main class="container mt-4">
+    <h2 class="text-center mb-4">Products From Database</h2>
+
+      <div class="d-flex flex-wrap gap-4 justify-content-center" id="Products">
+        
+      </div>
+      
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <div class="container">
+      &copy; 2025 Your Company. All rights reserved.
+    </div>
+  </footer>
+
+  <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label>Product Name</label>
+            <input type="text" class="form-control" required id="pname">
+          </div>
+          <div class="mb-3">
+            <label>Price</label>
+            <input type="number" class="form-control" required id="pprice">
+          </div>
+          <div class="mb-3">
+            <label>Description</label>
+            <textarea class="form-control" rows="3" required id="pdes"></textarea>
+          </div>
+          <div class="mb-3">
+            <label>Image URL</label>
+            <input type="url" class="form-control" required id="pimg">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button  class="btn btn-success" id="add-product">Add Product</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
